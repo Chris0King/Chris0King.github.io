@@ -1,0 +1,976 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/assets/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/assets/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="有一个大胆的想法：所有东西都可以用brew来安装？ –对，就是可以。">
+<meta name="keywords" content="Jekyll, Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homebrew 马克">
+<meta property="og:url" content="http://localhost:4000/techstack/homebrew-mark">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="有一个大胆的想法：所有东西都可以用brew来安装？ –对，就是可以。">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Homebrew 马克">
+<meta name="twitter:description" content="有一个大胆的想法：所有东西都可以用brew来安装？ –对，就是可以。">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: false,
+    motion: false,
+    duoshuo: {
+      userId: '',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>Homebrew 马克 | Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Put Notes online! Check it out.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/techstack/homebrew-mark">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhou Tommy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            Homebrew 马克
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Updated on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-12T00:00:00+08:00">
+                2018-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/TechStack" itemprop="url" rel="index">
+                    <span itemprop="name">TechStack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <p>有一个大胆的想法：所有东西都可以用brew来安装？
+–对，就是可以。</p>
+
+<!-- more -->
+
+<h2 id="0--基本使用">0  基本使用：</h2>
+
+<p>brew help 查看帮助。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22</pre></td><td class="code"><pre class="highlight"><code>Example usage:
+  brew search <span class="o">[</span>TEXT|/REGEX/]
+  brew info <span class="o">[</span>FORMULA...]
+  brew install FORMULA...
+  brew update
+  brew upgrade <span class="o">[</span>FORMULA...]
+  brew uninstall FORMULA...
+  brew list <span class="o">[</span>FORMULA...]
+
+Troubleshooting:
+  brew config
+  brew doctor
+  brew install <span class="nt">--verbose</span> <span class="nt">--debug</span> FORMULA
+
+Contributing:
+  brew create <span class="o">[</span>URL <span class="o">[</span><span class="nt">--no-fetch</span><span class="o">]]</span>
+  brew edit <span class="o">[</span>FORMULA...]
+
+Further <span class="nb">help</span>:
+  brew commands
+  brew <span class="nb">help</span> <span class="o">[</span>COMMAND]
+  man brew
+</code></pre></td></tr></tbody></table></div></div>
+
+<p><a href="https://docs.brew.sh">官网</a></p>
+
+<h2 id="1--相关了解">1  相关了解</h2>
+
+<h4 id="1关闭自动更新">1、关闭自动更新</h4>
+
+<p>export HOMEBREW_NO_AUTO_UPDATE=true</p>
+
+<h4 id="2什么是-homebrew">2、什么是 Homebrew？</h4>
+
+<p>Homebrew 是 macOS 的套件管理工具，是高效下载软件的一种方法，相当于 Linux 下的 yum、apt-get 神器，用于下载存在依赖关系的软件包。</p>
+
+<h4 id="3homebrew-与-homebrew-cask">3、Homebrew 与 Homebrew Cask</h4>
+
+<p>Homebrew Cask 是 Homebrew 的扩展，简单理解是，brew 安装各种库，cask 安装各种应用程序。</p>
+
+<h4 id="4homebrew-的好处">4、Homebrew 的好处</h4>
+
+<p>通过 Homebrew 下载的软件都来自于官网，绝对放心软件的安全性。而且它尽可能地利用系统自带的各种库，使得软件包的编译时间大大缩短，基本上不会造成冗余。</p>
+
+<h4 id="5homebrew-的安装">5、Homebrew 的安装</h4>
+
+<p>/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</p>
+
+<h2 id="2--其他命令">2  其他命令</h2>
+
+<h4 id="1支持多个同时安装用-空格-隔开">1、支持多个同时安装，用 空格 隔开。</h4>
+
+<p>brew cask install <软件名></软件名></p>
+
+<h4 id="2软件搜索命令-cask-源已经整合">2、软件搜索命令 cask 源已经整合。</h4>
+
+<p>brew search <关键字></关键字></p>
+
+<h4 id="3更新所有包">3、更新所有包</h4>
+
+<p>brew upgrade</p>
+
+<h4 id="4查看-homebrew-下载的包存放路径">4、查看 Homebrew 下载的包存放路径</h4>
+
+<p>brew –cache</p>
+
+<h4 id="5列出可更新的包">5、列出可更新的包</h4>
+
+<p>brew outdated</p>
+
+<h4 id="6清理旧版本的包">6、清理旧版本的包</h4>
+
+<p>brew cleanup
+brew cleanup -n</p>
+
+<h4 id="7彻底卸载某个包">7、彻底卸载某个包</h4>
+
+<p>brew uninstall <软件包> --force</软件包></p>
+
+<h4 id="8锁定某个不想更新的包">8、锁定某个不想更新的包</h4>
+
+<p>brew pin <软件包>
+brew unpin $<软件包></软件包></软件包></p>
+
+<h4 id="9查看已安装包的依赖">9、查看已安装包的依赖</h4>
+
+<p>brew deps –installed –tree</p>
+
+<h2 id="3--updating-homebrew-长时间不动解决方法">3  Updating Homebrew… 长时间不动解决方法</h2>
+
+<p>卡在 updating homebrew… 不动，可以这样解决。</p>
+
+<p>替换 brew.git；</p>
+
+<p>替换 homebrew-core.git；</p>
+
+<p>更换 homebrew-bottles；</p>
+
+<p>简单的本地解决办法是增加：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code><span class="nb">export </span><span class="nv">HOMEBREW_NO_AUTO_UPDATE</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>长期更换：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile<span class="p">;</span>
+<span class="nb">source</span> ~/.bash_profile
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="4--列表">4  列表</h2>
+
+<p>安装的时候注意有的是 cask，有的是 brew。</p>
+
+<p>github 客户端</p>
+
+<p>iina 视频播放器</p>
+
+<p>motrix 下载器</p>
+
+<p>karabiner-elements 改键</p>
+
+<p>MonitorControl 调节显示器亮度</p>
+
+<p>Typora 马克编辑器</p>
+
+<p>HandBrake 视频压缩</p>
+
+<p>gray 暗黑模式</p>
+
+<p>sourcetree Git 辅助工具</p>
+
+<h2 id="5--taps-增加其他源">5  Taps 增加其他源</h2>
+
+<p>brew tap homebrew/aliases</p>
+
+<p>aliases 指令替身</p>
+
+<p>homebrew-cask-drivers 驱动</p>
+
+<p>homebrew-cask-versions 老版本</p>
+
+<p>homebrew-cask-fonts 字体库</p>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/life/wwdc-18" rel="next" title="WWDC18 随录">
+                <i class="fa fa-chevron-left"></i> WWDC18 随录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/contest/acm-mark" rel="prev" title="ACM 缩略词">
+                ACM 缩略词 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/me.jpg"
+               alt="Zhou Tommy" />
+          <p class="site-author-name" itemprop="name">Zhou Tommy</p>
+           
+              <p class="site-description motion-element" itemprop="description">Put Notes online! Check it out.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/WOOTOMMY" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#0--基本使用"> <span class="nav-text">0 基本使用：</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#1--相关了解"> <span class="nav-text">1 相关了解</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#1关闭自动更新"> <span class="nav-text">1、关闭自动更新</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#2什么是-homebrew"> <span class="nav-text">2、什么是 Homebrew？</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#3homebrew-与-homebrew-cask"> <span class="nav-text">3、Homebrew 与 Homebrew Cask</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#4homebrew-的好处"> <span class="nav-text">4、Homebrew 的好处</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#5homebrew-的安装"> <span class="nav-text">5、Homebrew 的安装</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2--其他命令"> <span class="nav-text">2 其他命令</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#1支持多个同时安装用-空格-隔开"> <span class="nav-text">1、支持多个同时安装，用 空格 隔开。</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#2软件搜索命令-cask-源已经整合"> <span class="nav-text">2、软件搜索命令 cask 源已经整合。</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#3更新所有包"> <span class="nav-text">3、更新所有包</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#4查看-homebrew-下载的包存放路径"> <span class="nav-text">4、查看 Homebrew 下载的包存放路径</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#5列出可更新的包"> <span class="nav-text">5、列出可更新的包</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#6清理旧版本的包"> <span class="nav-text">6、清理旧版本的包</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#7彻底卸载某个包"> <span class="nav-text">7、彻底卸载某个包</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#8锁定某个不想更新的包"> <span class="nav-text">8、锁定某个不想更新的包</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#9查看已安装包的依赖"> <span class="nav-text">9、查看已安装包的依赖</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#3--updating-homebrew-长时间不动解决方法"> <span class="nav-text">3 Updating Homebrew… 长时间不动解决方法</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#4--列表"> <span class="nav-text">4 列表</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#5--taps-增加其他源"> <span class="nav-text">5 Taps 增加其他源</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhou Tommy</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
+

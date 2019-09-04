@@ -1,0 +1,1110 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/assets/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/assets/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自从 Github 官方的客户端崩了几次之后，决定彻底卸载，改用 Git 命令的方式进行项目更新。用着用着发现，Git 还有好多没搞明白的东西，这里统一做一个记录。">
+<meta name="keywords" content="Jekyll, Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 马克">
+<meta property="og:url" content="http://localhost:4000/techstack/git-mark">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="自从 Github 官方的客户端崩了几次之后，决定彻底卸载，改用 Git 命令的方式进行项目更新。用着用着发现，Git 还有好多没搞明白的东西，这里统一做一个记录。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/notes/git-base.jpg">
+<meta property="og:image" content="/assets/images/notes/git-co.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 马克">
+<meta name="twitter:description" content="自从 Github 官方的客户端崩了几次之后，决定彻底卸载，改用 Git 命令的方式进行项目更新。用着用着发现，Git 还有好多没搞明白的东西，这里统一做一个记录。">
+<meta name="twitter:image" content="/assets/images/notes/git-base.jpg">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: false,
+    motion: false,
+    duoshuo: {
+      userId: '',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>Git 马克 | Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Put Notes online! Check it out.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/techstack/git-mark">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhou Tommy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            Git 马克
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Updated on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T00:00:00+08:00">
+                2019-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/TechStack" itemprop="url" rel="index">
+                    <span itemprop="name">TechStack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <p>自从 Github 官方的客户端崩了几次之后，决定彻底卸载，改用 Git 命令的方式进行项目更新。用着用着发现，Git 还有好多没搞明白的东西，这里统一做一个记录。</p>
+
+<!-- more -->
+
+<h2 id="0--关于-git">0  关于 Git</h2>
+
+<p>这里记录的东西来自<a href="https://git-scm.com/">官方</a>的 PDF 与一些帖子。</p>
+
+<p><img src="/assets/images/notes/git-base.jpg" alt="git" /></p>
+
+<p>这里有一些基本概念和操作，上图很明确的解释了。</p>
+
+<ul>
+  <li>工作区 workspace：项目文件夹，即时性强，对文件的所有更改都会立刻体现在这里</li>
+  <li>版本库 .git：工作区有一个隐藏目录 .git，这个不算工作区，而是 Git 的版本数据库</li>
+  <li>暂存区 index/stage：git add以后，当前对文件的更改会保存到这个区</li>
+  <li>本地仓库 local repository：git commit 以后，当前暂存区里对文件的更改会提交到本地仓库；git pull 之后远程仓库领先的 commit 会同步到本地仓库</li>
+  <li>远程仓库 remote repository：远程仓库名一般叫 origin，git push以后，本地仓库里领先于远程仓库的 commit 会同步到远程仓库</li>
+</ul>
+
+<h2 id="1--git-config-设置">1  git config 设置</h2>
+
+<h3 id="11--常用配置">1.1  常用配置</h3>
+
+<p>.gitconfig 文件在 C:\Users\$USER 目录下，储存一些 Git 的参数属性，需要 Admin 权限进行更改。设置隐藏属性不影响权限。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="c"># show all config</span>
+git config <span class="nt">--global</span> <span class="nt">-l</span>
+
+<span class="c"># user profile</span>
+git config <span class="nt">--global</span> user.name <span class="s2">"Tommy"</span>
+git config <span class="nt">--global</span> user.email tommy.zhou@sap.com
+
+<span class="c"># editor Code</span>
+git config <span class="nt">--global</span> core.editor vim
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="12--设置-alias">1.2  设置 alias</h3>
+
+<p>设置 editor 这里，如果需要设置 VSCode，把安装路径添加到 PATH，使用 Code 作为键值就可，其他的编辑器也是类似的。另外Git 可以设置快捷指令。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="c"># alias</span>
+git config <span class="nt">--global</span> alias.co checkout
+git config <span class="nt">--global</span> alias.br branch
+git config <span class="nt">--global</span> alias.ad add
+git config <span class="nt">--global</span> alias.ci commit
+git config <span class="nt">--global</span> alias.ps push
+git config <span class="nt">--global</span> alias.pl pull
+git config <span class="nt">--global</span> alias.st status
+git config <span class="nt">--global</span> alias.lo log
+git config <span class="nt">--global</span> alias.unstage <span class="s1">'reset HEAD --'</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="2--repository-操作">2  repository 操作</h2>
+
+<h3 id="21--初始化与状态查询">2.1  初始化与状态查询</h3>
+
+<p>对一个进行版本管理的工具，常用操作在这里。显示本地与远程项目的交互，然后单独记录一下 branch 相关的一些配置。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="c"># initialize a repo</span>
+git init
+
+<span class="c"># clone from reomote</span>
+git clone &lt;url&gt; &lt;localname&gt;
+
+<span class="c"># check changing status</span>
+git status
+git status <span class="nt">-s</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>-s 参数可以用更简洁的形式进行显示。注意，这将显示左右两栏，左侧是 local repository 的状态，右侧是工作区的状态。A 代表添加，M 代表有修改。</p>
+
+<h3 id="22--文件提交与忽略">2.2  文件提交与忽略</h3>
+
+<p>检查文件状态的时候，git 不会检查未被跟踪的文件，比如刚刚建立的新文件。这个时候需要将文件加入到索引区，进行跟踪。在 git init 之后往往也需要进行一次 add 操作。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code><span class="c"># add new files to track</span>
+git add &lt;filename&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>在 add 的时候需要忽略一些不必要的文件，因此会有 .gitignore 文件。<a href="https://github.com/github/gitignore">参考</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code># vim .gitignore to edit
+cat .gitignore
+
+# ignore all .a files
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above !lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO /TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="23--更改内容对比">2.3  更改内容对比</h3>
+
+<p>可以查看工作区、本地仓库里面文件的更新对比。这将会打开默认的 editor。可以用外接工具打开和查看这些对比。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code><span class="c"># check the diff of workspace</span>
+git diff
+
+<span class="c"># check the diff of local repo</span>
+git diff <span class="nt">--staged</span>
+
+<span class="c"># using external tool</span>
+git difftool <span class="nt">--too</span><span class="o">=</span>&lt;tool&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="24--提交更新的内容">2.4  提交更新的内容</h3>
+
+<p>commit 提交文件的更新内容之后，需要附加一条 message 来进行标注。可以在 commit 弹出的默认编辑器中进行，也可以直接在指令中 -m 附加 message 的内容。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code><span class="c"># commit</span>
+git commit
+
+<span class="c"># append the message</span>
+git commit <span class="nt">-m</span> <span class="s2">"Message Content"</span>
+
+<span class="c"># automatically add</span>
+git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"Message Content"</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>注意这里提交的内容仅从 index/stage 到 local repository，没有 add 的文件不会进行提交。当然也可以使用 -a 来自动添加，但这只能添加所有开始跟踪的文件。</p>
+
+<h3 id="25--删除文件">2.5  删除文件</h3>
+
+<p>删除文件的流程应该是，同时删除工作区和缓存区的文件，再进行 commit。rm 指令仅移除工作区文件，git rm 指令可以移除工作区与缓存区的文件。使用 –cache 则可以仅移除缓存区文件，这一般用于移除不小心提交但实际需要忽略的文件。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="c"># remove files in workspace</span>
+rm &lt;filename&gt;
+
+<span class="c"># remove files in both workspace and stage</span>
+git rm &lt;filename&gt;
+git rm <span class="nt">-r</span> <span class="nb">.</span>
+
+<span class="c"># remove files in stage</span>
+git rm &lt;filename&gt; <span class="nt">--cache</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="26--移动文件">2.6  移动文件</h3>
+
+<p>Git 并不记录文件的移动，mv 指令等价于 rm 与 add 指令的组合。</p>
+
+<h2 id="27--查看文件更改历史">2.7  查看文件更改历史</h2>
+
+<p>git log 指令可以查看 commit 历史，这部分可选参数比较多，查看文档。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="c"># check commit history</span>
+git log
+git log <span class="nt">-p</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="28--撤销操作">2.8  撤销操作</h3>
+
+<p>几乎所有的操作都是可以撤销的。如果在 commit 之后发现有忘记 add 的文件，可以这样将文件添加进来，保持仅一次的 commit。使用 git reset 来取消文件的缓存，git checkout 来撤销文件的更改，分别撤销缓存区与工作区的更改。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="c"># add forgotten files to last commit</span>
+git commit <span class="nt">-m</span> <span class="s1">'initial commit'</span>
+git add forgotten_file
+git commit <span class="nt">--amend</span>
+
+<span class="c"># unstage files</span>
+git reset HEAD &lt;filename&gt;
+
+<span class="c"># revert modified files</span>
+git checkout <span class="nt">--</span> &lt;filename&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="29--与远程仓库交互">2.9  与远程仓库交互</h3>
+
+<p>本地操作好了就可以与远端仓库交互了。shortname 可以在后面的指令中替代跟在后面的 url。remove 的指令常常用于移除一些不再参与的 remote。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24</pre></td><td class="code"><pre class="highlight"><code><span class="c"># shwo remote repo</span>
+git remote
+git remote <span class="nt">-v</span>
+
+<span class="c"># same as git clone</span>
+git remote add &lt;shortname&gt; &lt;url&gt;
+
+<span class="c"># get remote to local, requires manually merge</span>
+git fetch &lt;remote&gt;
+
+<span class="c"># automatically fetch and pull</span>
+git pull &lt;remote&gt;
+
+<span class="c"># pushing to remotes, default to origin master</span>
+git push &lt;remote&gt; &lt;branch&gt;
+
+<span class="c"># inspecting a remote</span>
+git remote show &lt;remote&gt;
+
+<span class="c"># rename remote</span>
+git remote rename &lt;pb&gt; &lt;remote&gt;
+
+<span class="c"># removing remote</span>
+git remote remove pb
+</code></pre></td></tr></tbody></table></div></div>
+
+<h2 id="3--branch-相关操作">3  branch 相关操作</h2>
+
+<p>branch 的操作很有意思。branch 仅仅是一个可移动的指针，指向某一次的 commit，master 也是一个特殊的指针，默认在 init 的时候创建。创建一个新的 branch时，默认指向当前的 commit。指向指针的指针 HEAD 来指明当前所在的 branch。</p>
+
+<p><img src="/assets/images/notes/git-co.jpg" alt="01" /></p>
+
+<h2 id="31--分支创建与切换">3.1  分支创建与切换</h2>
+
+<p>分支创建的时候，默认指向当前最新的 commit。切换分支会改变工作区的文件。创建新的分支的时候会复制当前分支所有的文件和 commit 历史，因此需要 fork 其他人提交历史的时候，可以进行：1 为项目添加别人的 remote；2 git checkout 到所需的分支；3 在这里执行 git checkout -b &lt;name&gt;。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="c"># create a new branch</span>
+git branch &lt;branchname&gt;
+
+<span class="c"># list all branches</span>
+git branch
+git branch <span class="nt">-a</span>
+git branch <span class="nt">-v</span>
+
+<span class="c"># already merged branch</span>
+git branch <span class="nt">--merged</span>
+git branch <span class="nt">--no-merged</span>
+
+<span class="c"># switching branches</span>
+git checkout &lt;branchname&gt;
+git checkout <span class="nt">-b</span> &lt;branchname&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="32--分支合并">3.2  分支合并</h3>
+
+<p>切换到合并的分支，merge 被合并的分支，之后可以删除被合并的分支。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="c"># merge branches</span>
+git checkout master
+git merge &lt;branchname&gt;
+
+<span class="c"># delete branch</span>
+git branch <span class="nt">-d</span> &lt;branch&gt;
+
+<span class="c"># delete remote branch</span>
+git push origin <span class="nt">--delete</span> &lt;branchname&gt;
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>如果合并的时候遇到了分支之间的冲突，那么 git 会提示冲突的存在，需要手动解决，但是此时已经创建了一个 merge commit，再用 status 查看存在冲突的 path。另外 git 还会在冲突的文件加入 standard conflict-resolution markers，标记冲突。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27</pre></td><td class="code"><pre class="highlight"><code><span class="c"># merge conflict</span>
+git merge iss53
+Auto-merging index.html
+CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict <span class="k">in </span>index.html
+Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then </span>commit the result.
+
+<span class="c"># check status now</span>
+git status
+On branch master
+You have unmerged paths.<span class="o">(</span>fix conflicts and run <span class="s2">"git commit"</span><span class="o">)</span>
+
+Unmerged paths:<span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to mark resolution<span class="o">)</span>
+    both modified:      index.html
+ 
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span>
+
+<span class="c"># standard conflict-resolution markers</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD:index.html
+&lt;div <span class="nv">id</span><span class="o">=</span><span class="s2">"footer"</span><span class="o">&gt;</span>contact : email.support@github.com&lt;/div&gt;
+<span class="o">=======</span>
+&lt;div <span class="nv">id</span><span class="o">=</span><span class="s2">"footer"</span><span class="o">&gt;</span>
+	please contact us at support@github.com
+&lt;/div&gt;
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> iss53:index.html
+
+<span class="c"># external tool</span>
+git mergetool
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>解决冲突需要移除冲突标记，将整块的内容替换为选择的那个分支的这部分的内容。</p>
+
+<p>后面还有许多高端的操作，一般也用不上，先记录这么多了，有需要的时候再查阅官方文档。</p>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/techstack/vim-mark" rel="next" title="Vim 马克">
+                <i class="fa fa-chevron-left"></i> Vim 马克
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/techstack/cmd-mark" rel="prev" title="CMD 马克">
+                CMD 马克 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/me.jpg"
+               alt="Zhou Tommy" />
+          <p class="site-author-name" itemprop="name">Zhou Tommy</p>
+           
+              <p class="site-description motion-element" itemprop="description">Put Notes online! Check it out.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/WOOTOMMY" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#0--关于-git"> <span class="nav-text">0 关于 Git</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#1--git-config-设置"> <span class="nav-text">1 git config 设置</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#11--常用配置"> <span class="nav-text">1.1 常用配置</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#12--设置-alias"> <span class="nav-text">1.2 设置 alias</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2--repository-操作"> <span class="nav-text">2 repository 操作</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#21--初始化与状态查询"> <span class="nav-text">2.1 初始化与状态查询</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#22--文件提交与忽略"> <span class="nav-text">2.2 文件提交与忽略</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#23--更改内容对比"> <span class="nav-text">2.3 更改内容对比</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#24--提交更新的内容"> <span class="nav-text">2.4 提交更新的内容</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#25--删除文件"> <span class="nav-text">2.5 删除文件</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#26--移动文件"> <span class="nav-text">2.6 移动文件</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#27--查看文件更改历史"> <span class="nav-text">2.7 查看文件更改历史</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#28--撤销操作"> <span class="nav-text">2.8 撤销操作</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#29--与远程仓库交互"> <span class="nav-text">2.9 与远程仓库交互</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#3--branch-相关操作"> <span class="nav-text">3 branch 相关操作</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#31--分支创建与切换"> <span class="nav-text">3.1 分支创建与切换</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#32--分支合并"> <span class="nav-text">3.2 分支合并</span> </a> </li> </ol> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhou Tommy</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
